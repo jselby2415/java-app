@@ -1,6 +1,6 @@
 var currentQuestion = 0;
 var score = 0;
-var totQuestions = question.length;
+var totQuestions = questions.length
 
 var container = document.getElementbyId('quizContainer');
 var questionEl = document.getElementbyId('question');
@@ -11,9 +11,9 @@ var opt4 = document.getElementbyId('opt4');
 var nextButton = document.getElementbyId('nextbutton');
 var resultCont = document.getElementbyId('result');
 
-function loadQuestion (questionIndex) {
+function loadQuestion (questionIndex){
 	var q = questions[questionIndex];
-	questionsEl.textContent = (questionIndex + 1) + '. ' + q.questions;
+	questionsEl.textContent = (questionIndex + 1) + '. ' + q.question;
 	opt1.textContent = q.option1;
 	opt2.textContent = q.option2;
 	opt3.textContent = q.option3;
@@ -25,8 +25,7 @@ function loadNextQuestion () {
 	if(!selectedOption){
 		alert('please select your answer!');
 		return;
-
-	}
+    }
 	var answer = selectedOption.value;
 	if(questions[currentquestion].answer == answer){
 		score += 5;
@@ -43,6 +42,6 @@ function loadNextQuestion () {
     	return;
     }
     loadQuestion(currentQuestion);
-
+}    
 
 loadQuestion(currentQuestion);
