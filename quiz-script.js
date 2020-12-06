@@ -11,7 +11,7 @@ var opt4 = document.getElementById('opt4');
 var nextButton = document.getElementById('nextbutton');
 var resultCont = document.getElementById('result');
 
-function loadQuestion (questionIndex){
+function loadQuestion (questionIndex) {
 	var q = questions[questionIndex];
 	questionEl.textContent = (questionIndex + 1) + '. ' + q.question;
 	opt1.textContent = q.option1;
@@ -27,7 +27,7 @@ function loadNextQuestion () {
 		return;
     }
 	var answer = selectedOption.value;
-	if(questions[currentquestion].answer == answer){
+	if(Questions[currentQuestion].answer == answer){
 		score += 5;
 	}
 	selectedOption.checked = false;
@@ -35,7 +35,7 @@ function loadNextQuestion () {
 	if(currentQuestion == totQuestions -1){
         nextbutton.textContent = 'finish';
 	}
-    if(currentquestion == totQuestions){
+    if(currentQuestion == totQuestions){
     	container.style.display = 'none';
     	resultCont.style.display = '';
     	resultCont.textContent = 'Your Score: ' + score;
