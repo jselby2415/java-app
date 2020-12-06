@@ -27,7 +27,7 @@ function loadNextQuestion () {
 		return;
     }
 	var answer = selectedOption.value;
-	if(Questions[currentQuestion].answer == answer){
+	if(questions[currentQuestion].answer == answer){
 		score += 5;
 	}
 	selectedOption.checked = false;
